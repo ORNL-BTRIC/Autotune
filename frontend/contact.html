@@ -1,0 +1,69 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title> Autotune </title>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	
+		<link type="text/css" rel="stylesheet" href="stylePractice2.css" />
+		<link type="text/css" rel="stylesheet" href="mobile.css" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<link href="css/custom-theme/jquery-ui-1.10.2.custom.css" rel="stylesheet">  
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> 
+		<script src="jquery/JQContact.js"></script> 
+		
+		
+	</head>
+
+	<body>
+		
+		<div id="logo">
+			<a href="home.html"><img src="pictures/Logo.png"/></a>
+			
+		</div>
+		
+		<nav>
+			<a href="home.html"> Home </a>
+			<a href="about.html"> About </a>
+			<a class="current" href="contact.html"> Contact Us </a>
+		</nav>
+		
+		<div class="inside">
+			<div id="content">
+			
+				<section class="left">
+					
+					<h1>
+						Contact Us
+					</h1>
+					<form id="mailto">
+						<input name="to" type="hidden" value="agarrett@jsu.edu">
+						<br>
+						<label>Name</label> <br>
+						<input type="text" name="fName" placeholder="First Name" size="15" required> <input type="text" name="lName" placeholder="Last Name" size="15" required> <br>
+						<label>Email</label> <br>
+						<input type="email" name="from" placeholder="Email" size="30" required><br>
+						<label>Subject</label>	<br>
+						<input type="text" name="subject" size="30"  placeholder="Subject" required><br>
+						<label>Question</label> <br>
+						<textarea name="body" rows="10" cols="60"  placeholder="Comments" required></textarea><br>
+						<input name="submitButn" type="submit" value="Send">
+					</form>
+					
+				</section>
+				
+				<div id="dialog-modal" title="Confirmation">
+					<div id="ajaxOutput"></div>
+				</div>
+				
+			</div> <!-- end of content -->
+
+		</div> <!-- end of inside -->
+		
+		<footer>
+			<p>Footer comments!</p>
+		</footer>
+	</body>
+
+
+</html>

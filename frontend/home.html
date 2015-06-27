@@ -1,0 +1,104 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title> Autotune </title>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	
+		<link type="text/css" rel="stylesheet" href="stylePractice2.css" />
+		<link type="text/css" rel="stylesheet" href="mobile.css" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="jquery/JQHome.js"></script> 
+		
+		
+	</head>
+
+	<body>
+		
+		<div id="logo">
+			<a href="home.html"><img src="pictures/Logo.png"/></a>
+			
+		</div>
+		
+		<nav>
+			<a class="current" href="home.html"> Home </a>
+			<a href="about.html"> About </a>
+			<a href="contact.html"> Contact Us </a>
+		</nav>
+		
+		<div class="inside">
+			<div id="content">
+			
+			
+				
+				<div id="trackingBox" class="right">
+					
+					<h1>Track Progress of Your Model</h1>
+					<p>
+						Check on your model
+					</p>
+					<form id="trackingForm">
+						<input type="text" id="tracking" name="tracking" placeholder="Enter your tracking #" size="27">
+						
+						<input type="submit" class="ajax button right" value="Review">
+
+						<div id="ajaxOutput" style="font-size:0.9em;"></div>
+					
+					</form>
+				
+				</div>
+				
+			
+				<div class="left">
+					
+					<h1>
+						Introduction to Autotune
+					</h1>
+					<p>
+						Autotune can save time, effort, and money in modeling a building.  Autotune uses a rough estimate of the building and real data to create models that more closely represent the building.  All you have to do is get started with one of the setups and you can soon have models of your building. 
+					</p>
+				</div>
+				
+				
+				
+				<section>
+					
+					<h1>
+						About This Website
+					</h1>
+					<p class="inform">
+						Autotune is designed to make the modeling process easier. You can start designing your model through the basic or advanced setup. If you have already completed the setup, you can enter your tracking number into the tracking box to review the progress of your order or download models if any are available. <br><u><em>Enjoy the simplistic power of Autotune!</em></u>
+					</p>
+				</section>
+				
+				<section>
+					<h1>
+						Create a model for your building
+					</h1>
+					<div class="box">
+						<h2> Basic Setup</h2>
+						<p class="inform">
+							The basic setup is designed with simplicity in mind. If you have only the basic knowledge of the building, this is the choice of setup for you.
+						</p>
+						
+						<a class="button right" href="selectingModelPage.php">Get Started</a>
+						
+					</div>
+					<div class="box">
+						<h2> Advanced or Experienced Setup </h2>
+						<p class="inform">
+							The advanced setup is for those who are very knowledgeable with the specifications of the building. This setup will provide the most customized model and will result in quicker, more accurate results.
+						</p>
+						<a class="button right" href="selectingModelPage.php?advanced=1"> Advanced Setup</a>
+					</div>
+				</section> 
+			</div> <!-- end of content -->
+		</div> <!-- end of inside -->
+		
+		<footer>
+			<p>Footer comments!</p>
+		</footer>
+	</body>
+
+
+</html>

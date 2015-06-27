@@ -1,0 +1,21 @@
+Class,Object,Field,Default,Minimum,Maximum,Distribution,Type,Group
+Schedule:Compact,CLGSETP_SCH,Field 4,26,18.2,33.8,Uniform,Float,A
+Schedule:Compact,CLGSETP_SCH,Field 6,23,16.1,29.9,Uniform,Float,B
+Schedule:Compact,CLGSETP_SCH,Field 8,26,18.2,33.8,Uniform,Float,A
+Schedule:Compact,CLGSETP_SCH,Field 11,26,18.2,33.8,Uniform,Float,A
+Schedule:Compact,CLGSETP_SCH,Field 13,23,16.1,29.9,Uniform,Float,B
+Schedule:Compact,CLGSETP_SCH,Field 15,26,18.2,33.8,Uniform,Float,A
+Schedule:Compact,CLGSETP_SCH,Field 18,26,18.2,33.8,Uniform,Float,A
+Schedule:Compact,CLGSETP_SCH,Field 21,26,18.2,33.8,Uniform,Float,A
+Schedule:Compact,HTGSETP_SCH,Field 4,16,11.2,20.8,Uniform,Float,C
+Schedule:Compact,HTGSETP_SCH,Field 6,22,15.4,28.6,Uniform,Float,D
+Schedule:Compact,HTGSETP_SCH,Field 8,16,11.2,20.8,Uniform,Float,C
+Schedule:Compact,HTGSETP_SCH,Field 11,16,11.2,20.8,Uniform,Float,C
+Schedule:Compact,HTGSETP_SCH,Field 14,16,11.2,20.8,Uniform,Float,C
+Schedule:Compact,HTGSETP_SCH,Field 16,22,15.4,28.6,Uniform,Float,D
+Schedule:Compact,HTGSETP_SCH,Field 18,16,11.2,20.8,Uniform,Float,C
+Schedule:Compact,HTGSETP_SCH,Field 21,22,15.4,28.6,Uniform,Float,D
+Schedule:Compact,HTGSETP_SCH,Field 24,16,11.2,20.8,Uniform,Float,C
+WindowMaterial:SimpleGlazingSystem,NonRes Fixed Assembly Window,U-Factor,3.8,2.66,4.94,Uniform,Float,
+Sizing:Parameters,Sizing:Parameters,Heating Sizing Factor,1.4,0.98,1.82,Uniform,Float,
+Sizing:Parameters,Sizing:Parameters,Cooling Sizing Factor,1.4,0.98,1.82,Uniform,Float,

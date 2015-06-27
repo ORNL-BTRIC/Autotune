@@ -1,0 +1,12 @@
+php.ini
+max_execution_time = 180
+max_input_time = 180
+post_max_size = 64M
+upload_max_filesize = 64M
+
+my.ini
+max_allowed_packet = 64M
+innodb_buffer_pool_size = 64M
+innodb_additional_mem_pool_size = 16M
+innodb_log_file_size = 16M
+innodb_log_buffer_size = 24M

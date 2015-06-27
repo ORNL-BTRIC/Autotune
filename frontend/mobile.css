@@ -1,0 +1,70 @@
+@media screen and (max-device-width: 699px) and (max-device-height:1000px) {
+	#logo
+	{
+		position:static;
+		text-align:center;
+		background:white;
+		padding:1px;
+		top:-1px;
+		margin-bottom:0px;
+	}
+	body
+	{
+		margin:0px;
+		background: white;
+	}
+	.inside, nav
+	{
+		width:100%;
+		min-width:.75em;
+	}
+
+	.inside
+	{
+		min-height:50px;
+		box-shadow:0px 0px 0px 0px white;
+	}
+	#content
+	{
+		width:100%;
+		overflow-y:visible;
+		overflow-x:hidden;
+		padding:0px;
+	}
+	nav a, nav .current
+	{
+		width:33.3333%;
+		color:white;
+		position:relative;
+		font-size:1em;
+		top:0px;
+		float:left;
+		border:0px solid black;
+		display:inline-block;
+		height:25px;
+		padding:0px;
+		text-decoration:none;
+		background:#5555FF;
+		
+	}
+	a.button:hover, nav a:hover, nav a.current:hover
+	{
+		background:#4444FF;
+	}
+	.button
+	{
+		min-width:.5em;
+	}
+	#trackingBox
+	{
+		width:100%;
+	}
+	h1
+	{
+		
+	}
+	h2
+	{
+
+	}
+}

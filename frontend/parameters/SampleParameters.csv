@@ -1,0 +1,9 @@
+Class,Object,Field,Default,Minimum,Maximum,Distribution,Type,Group
+Lights,BulkStorage_Lights,Watts per Zone Floor Area,10.5,7.35,13.65,Uniform,Float,
+Lights,FineStorage_Lights,Watts per Zone Floor Area,16,11.2,20.8,Uniform,Float,
+Lights,Office_Lights,Watts per Zone Floor Area,13,9.1,16.9,Uniform,Float,
+ElectricEquipment,BulkStorage_MiscPlug_Equip,Watts per Zone Floor Area,2.7,1.89,3.51,Uniform,Float,
+ElectricEquipment,Office_MiscPlug_Equip,Watts per Zone Floor Area,9,6.3,11.7,Uniform,Float,
+ZoneInfiltration:DesignFlowRate,BulkStorage_Infiltration,Flow per Exterior Surface Area,0.00033,0.000231,0.000429,Uniform,Float,
+ZoneInfiltration:DesignFlowRate,FineStorage_Infiltration,Flow per Exterior Surface Area,0.00033,0.000231,0.000429,Uniform,Float,
+ZoneInfiltration:DesignFlowRate,Office_Infiltration,Flow per Exterior Surface Area,0.00033,0.000231,0.000429,Uniform,Float,

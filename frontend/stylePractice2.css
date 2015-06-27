@@ -1,0 +1,459 @@
+
+{
+	border:1px dotted red;
+} 
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+body
+{
+	font-family:Verdana, sans-serif;
+	background: url('pictures/BlueToWhiteGradient.jpg') repeat-x; 
+	/*background:#dedef4;*/
+}
+#logo
+{
+	position:relative;
+	left:40px;
+	top:-5px;
+	display:block;
+	margin-bottom:10px;
+}
+#pageTitle /* title of the page */
+{
+	font-size:1.5em;
+}
+#trackingBox /* box which user enters tracking info*/
+{
+	overflow:visible;
+	float:right;
+	min-width:300px;
+	
+	border:1px solid #444444;
+	background-color:#eeeeee;
+	margin-bottom:10px;
+}
+#trackingBox h1
+{
+	text-shadow:1px 1px black;
+	font-size:1.1em;
+	font-family:Time, sans-serif;
+	color:white;
+	background-color:#444499;
+	text-align:center;
+	display:block;
+}
+#modelEntry
+{
+	
+}
+#ajaxOutput 
+{
+	display:none;
+	width:100%;
+}
+
+
+nav a   /* main links to navigate from home page*/
+{
+
+	
+	color:white;
+	position:relative;
+	/*top:-2px;*/
+	float:left;
+	border:1px solid black;
+	display:inline-block;
+	height:25px;
+	padding-right:12px;
+	padding-left:12px;
+	text-decoration:none;
+	
+
+}
+nav, .inside
+{
+	min-width:320px;
+	width:75%;
+	margin:auto;
+	
+}
+nav
+{
+	height:26px;
+
+}
+
+nav .current
+{
+	color:black;
+	background-color:white;
+	border-bottom:2px solid white;
+	height:30px;
+	top:-6px;
+	font-size:1.2em;
+	box-shadow: inset 0px 0px 0px 0px white;
+}
+
+nav a.current:hover
+{
+	background:white;
+	
+}
+a.button:hover, nav a:hover
+{
+	/*background:url('pictures/Butn_Grad2.png') repeat-x;*/
+	background:#4444FF;
+}
+.button, nav a
+{
+	text-decoration:none;
+	
+	box-shadow:inset 0px 11px 3px 1px #8888FF;
+	text-align:center;
+	font-size:0.9em;
+	font-weight:bold;
+	display:inline-block;
+	height:23px;
+	line-height:22px;
+	color:white;
+	background:#5555FF;
+}
+
+.button
+{	
+
+	padding-right:5px;
+	padding-left:5px;
+	cursor:pointer;
+	border:1px solid black;
+	border-radius:5px;
+}
+.option
+{
+	color:#0066CC;
+}
+.option:hover
+{
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+#content
+{
+
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom:40px;
+}
+
+.inside /* container for the main inside of the page*/
+{
+	min-height:400px;
+	background-color:white;
+	box-shadow:0px 0px 10px 1px #777780;
+	margin-bottom:20px;
+}
+
+.inside:before, .inside:after /* This was used as a clearfix*/
+{
+	content:" ";
+	display:table;
+}
+.inside:after
+{
+	clear:both;
+}
+
+.center
+{
+	margin:auto;
+	text-align:center;
+}
+
+.left
+{
+	clear:left;
+	float:left;
+}
+div.left /* creates a section on the left side of the page*/
+{
+	width:56%;
+	min-width:280px;
+}
+.right
+{
+	float:right;
+}
+div.right /* creates a section on the right side of the page*/
+{
+	width:40%;
+	min-width:310px;
+}
+
+p.right 
+{
+	text-align:right;
+}
+
+.box /* encloses content with a border*/
+{
+	overflow:hidden;
+	margin:8px 10px 10px 10px;
+	box-shadow:0px 0px 10px 3px #dddddd;
+	padding:1px 10px 5px 10px;
+	border-radius:3px;
+	
+}
+
+
+section /*a section within the page*/
+{
+	clear:both;
+	margin-top:30px;
+}
+section h1
+{
+	margin:0px;
+}
+#homeSelect .left
+{
+	width:75%;
+}
+#homeSelect .right
+{
+	width:22%;
+}
+#homeSelect img
+{	
+	cursor:pointer;
+	padding:1px;
+	margin:0px;
+	width:250px;
+	height:220px;
+}
+.sizeSelect
+{
+	padding:0% 4%;
+}
+
+#homeSelect .current, #sizeSelect .current
+{
+	border:1px solid black;
+	padding:0px;
+}
+
+#sizeSelect div img
+{
+	
+	display:inline-block;
+	width:200px;
+	height:120px;
+	padding-bottom:5px;
+}
+#sizeSelect div
+{
+	cursor:pointer;
+	display:block;
+	margin:auto;
+
+}
+
+.imageWrap
+{
+	display:inline-block;
+	text-align:center;
+}
+.home img
+{
+	background:url(pictures/imageCollection.png) -420px -15px;
+
+}
+.business img
+{
+	background:url(pictures/imageCollection.png) -410px -505px;
+
+}
+.warehouse img
+{
+	background:url(pictures/imageCollection.png) -20px -260px;
+
+}
+
+.wrapper
+{
+	position:relative;
+}
+
+#above, #below
+{
+	position:absolute;
+	width:100%;
+	height:90px;	
+}
+#above
+{
+	top:-90px;
+	
+}
+
+.scheduleContainer
+{
+	margin:auto;
+	width:90%;
+	/*height:400px;
+	overflow:auto;*/
+}
+
+.ui-selecting, .ui-selected 
+{
+	background: #F39814;
+}
+[class^=selected]
+{
+	
+}
+.selected
+{
+	height:100%;
+	cursor:pointer;
+}
+.bedroom
+{
+	background: powderblue;
+	
+}
+.kitchen
+{
+	background: #88EE55;
+}
+.bathroom
+{
+	background: #d5c4c3;
+}
+.diningRoom
+{
+	background: #FFDD44;
+}
+.livingRoom
+{
+	background: #44DDAA;
+}
+
+table
+{
+
+	border-collapse:collapse;
+	width:100%;
+	min-width:120px;
+	margin:auto;
+}
+thead
+{
+	width:100%;
+	height:20px;
+
+}
+table td
+{
+	border:1px solid #cccccc;
+}
+table .unbold
+{
+	font-weight:normal;
+	text-align:right;	
+}
+th
+{
+	text-align:center;
+}
+table td div
+{
+	padding:10px;
+}
+
+p
+{
+	font-size:1em;
+	margin:7px;
+}
+p.inform /* informative text (used on home page)*/
+{
+
+}
+p.instruct /* instructional text*/
+{
+
+}
+.important 
+{
+	color:red;
+	font-style:italic;
+}
+p.emphasized
+{
+
+	font-size:1.4em;
+}
+footer
+{
+	color:#777777;
+	text-align:center;
+	width:100%;
+	
+}
+.highlight
+{
+	background-color:#DDDDFF;
+}
+
+h1
+{
+	margin:0px;
+	font-size:1.2em;
+}
+h2
+{
+	font-size:1em;
+	margin:0px;
+}
+h4
+{
+	margin:0px;
+}
+#accordion h3
+{
+	text-align:center;
+}
+#accordion div
+{
+	padding:1% 2%;
+}
+form
+{
+	margin-bottom:0px;
+}
+legend
+{
+	display:none;
+}
+textarea
+{
+	width:100%;
+}
+#googleMap
+{
+	width:700px;
+	height:380px;
+}
+fieldset
+{
+	min-width:300px;
+	min-height:415px;
+	padding:0px;
+}
+
+.unseen
+{
+	display:none;
+}

@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<definitions name='Autotune'
+  targetNamespace='urn:AutotuneService'
+  xmlns:tns='urn:AutotuneService'
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+  xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+  xmlns='http://schemas.xmlsoap.org/wsdl/'>
+
+  <documentation>
+	This web service provides access to Autotune's tuning services. All output is given in JSON format.
+	The process begins by entering a base model with some additional arguments into the "tune" function. The order will be placed into a queue. Here are all the functions in greater detail:
+
+	tune(uData, bModel, schedule, parameters, weather, email)
+	-"tune" enters the base model and additional inputs into Autotune's queue for tuning.
+		*Inputs*
+			uData - real user data (electricty usage, gas usage, temperature readings, etc.).
+			bModel - base model.
+			schedule - schedule of zone usage.
+			parameters - parameters for tuning base model.
+			weather - name of the weather file to tune the base model.
+			email - (can be given as an empty string) contact information so that Autotune can inform the user of the order's completion.
+		*Output*
+			Output includes the tracking and position of the new order.
+				{"autotune":
+				  {"tracking":"8765",
+				   "position":-1
+				  }
+				}
+				
+	retune(tracking)
+	-creates a new order with the same initial inputs. Similar to restarting a tune with a new tracking.
+		*Inputs*
+			tracking - the tracking number of the order.
+		*Output*
+			Output includes the new tracking number and its position. Error is returned if tracking is invalid.
+				{"autotune":
+				  {"tracking":"8765",
+				   "position":-1
+				  }
+				}
+						
+	resume(tracking)
+	-resumes the order until completed (useful if order finished or was terminated).
+		*Inputs*
+			tracking - the tracking number of the order.
+		*Output*
+			Output includes tracking, position, runtime, terminate, model ids, and model fits. Error is returned for invalid tracking.
+				{"autotune":
+				  {"tracking":"8765",
+				   "position":-1,
+				   "terminate":0,
+				   "runtime":45678,
+				   "models":[
+					 {"id":1, "fitness":0.765}
+					 {"id":2, "fitness":1.234}]
+				   }
+				}
+		
+	getOutput(tracking)
+	-returns the default details about an order.
+		*Inputs*
+			tracking - the tracking number of the order.
+		*Output*
+			Output includes the tracking number, position, runtime, terminate, model ids, and corresponding model fits. Error is returned for invalid tracking.
+				{"autotune":
+				  {"tracking":"8765",
+				   "position":-1,
+				   "terminate":0,
+				   "runtime":45678,
+				   "models":[
+					 {"id":1, "fitness":0.765}
+					 {"id":2, "fitness":1.234}]
+				   }
+				}
+			
+	getFullOutput(tracking)
+	-returns the full details of an order.
+		*Inputs*
+			tracking - the tracking number of the order.
+		*Output*
+			Output includes tracking number, position, runtime, model ids, model fits, weather file, baseModel, parameters, schedule, userData, and model files. Error is returned for invalid tracking.
+				{"autotune":
+				  {"tracking":"8765",
+				   "position":-1,
+				   "weather":"USA_AL_Birmingham_whatever.epw",
+				   "email":"joe@gmail.com",
+				   "basemodel":"string-goes-here",
+				   "parameters":"string-goes-here",
+				   "schedule":"string-goes-here",
+				   "userData":"string-goes-here",
+				   "terminate":0,
+				   "runtime":45678,
+				   "models":[
+					 {"id":1, "fitness":0.765, "file":"string-goes-here"}
+					 {"id":2, "fitness":1.234, "file":"string-goes-here"}]
+				   }
+				}
+	
+	getModel(tracking, modelId)
+	-returns information on a particular generated model.
+		*Inputs*
+			tracking - the tracking number of the order.
+			modelId - the model id within the tracking number.
+		*Output*
+			Output includes tracking number, runtime, model id, model file, and model fit.  Error is returned for invalid tracking or model id.
+				{"autotune":
+				  {"tracking":"8765",
+				   "runtime":45678,
+				   "models":[
+					 {"id":1, "fitness":0.765, "file":"string-goes-here"}]
+				   }
+				}
+			
+	terminate(tracking)
+	-sets the terminate field in the database. The order will be stopped. If it is currently running, it will stop when it finishes with its current generation of models.
+		*Inputs*
+			tracking - the tracking number of the order.
+		*Output*
+			Output includes tracking, position, terminate, runtime, model ids, and model fits. Error is returned for invalid tracking.
+				{"autotune":
+				  {"tracking":"8765",
+				   "position":-1,
+				   "terminate":1,
+				   "runtime":45678,
+				   "models":[
+					 {"id":1, "fitness":0.765}
+					 {"id":2, "fitness":1.234}]
+				   }
+				}
+			
+***Sample Error***
+	{"autotune":
+		{"error":
+			{"code":1234,
+			 "description":"Error details"
+			}
+		}
+	}
+	
+  
+  </documentation>
+<message name='tuneRequest'>
+  <part name='uData' type='xsd:string'/>
+  <part name='bModel' type='xsd:string'/>
+  <part name='schedule' type='xsd:string'/>
+  <part name='parameters' type='xsd:string'/>
+  <part name='weather' type='xsd:string'/>
+  <part name='email' type='xsd:string'/>
+</message>
+<message name='tuneResponse'>
+  <part name='Result' type='xsd:string'/>
+</message>
+<message name='retuneRequest'>
+  <part name='tracking' type='xsd:integer'/>
+</message>
+<message name='retuneResponse'>
+  <part name='Result' type='xsd:string'/>
+</message>
+<message name='resumeRequest'>
+  <part name='name' type='xsd:integer'/>
+</message>
+<message name='resumeResponse'>
+  <part name='Result' type='xsd:string'/>
+</message>
+<message name='getFullOutputRequest'>
+  <part name='tracking' type='xsd:integer'/>
+</message>
+<message name='getFullOutputResponse'>
+  <part name='Result' type='xsd:string'/>
+</message>
+<message name='getOutputRequest'>
+  <part name='tracking' type='xsd:integer'/>
+</message>
+<message name='getOutputResponse'>
+  <part name='Result' type='xsd:string'/>
+</message>
+<message name='getModelRequest'>
+  <part name='tracking' type='xsd:integer'/>
+  <part name='modelId' type='xsd:integer'/>
+</message>
+<message name='getModelResponse'>
+  <part name='Result' type='xsd:string'/>
+</message>
+<message name='terminateRequest'>
+  <part name='name' type='xsd:integer'/>
+</message>
+<message name='terminateResponse'>
+  <part name='Result' type='xsd:string'/>
+</message>
+
+<portType name='AutotunePortType'>
+  <operation name='tune'>
+    <input message='tns:tuneRequest'/>
+    <output message='tns:tuneResponse'/>
+  </operation>
+  <operation name='retune'>
+    <input message='tns:retuneRequest'/>
+    <output message='tns:retuneResponse'/>
+  </operation>
+  <operation name='resume'>
+    <input message='tns:resumeRequest'/>
+    <output message='tns:resumeResponse'/>
+  </operation>
+  <operation name='getFullOutput'>
+    <input message='tns:getFullOutputRequest'/>
+    <output message='tns:getFullOutputResponse'/>
+  </operation>
+  <operation name='getOutput'>
+    <input message='tns:getOutputRequest'/>
+    <output message='tns:getOutputResponse'/>
+  </operation>
+  <operation name='getModel'>
+    <input message='tns:getModelRequest'/>
+    <output message='tns:getModelResponse'/>
+  </operation>
+  <operation name='terminate'>
+    <input message='tns:terminateRequest'/>
+    <output message='tns:terminateResponse'/>
+  </operation>
+</portType>
+
+<binding name='AutotuneBinding' type='tns:AutotunePortType'>
+  <soap:binding style='rpc'
+    transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='tune'>
+    <soap:operation soapAction='urn:xmethods-delayed-quotes#tune'/>
+    <input>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </input>
+    <output>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </output>
+  </operation>
+  <operation name='retune'>
+    <soap:operation soapAction='urn:xmethods-delayed-quotes#retune'/>
+    <input>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </input>
+    <output>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </output>
+  </operation>
+  <operation name='resume'>
+    <soap:operation soapAction='urn:xmethods-delayed-quotes#resume'/>
+    <input>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </input>
+    <output>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </output>
+  </operation>
+  <operation name='getFullOutput'>
+    <soap:operation soapAction='urn:xmethods-delayed-quotes#getFullOutput'/>
+    <input>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </input>
+    <output>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </output>
+  </operation>
+  <operation name='getOutput'>
+    <soap:operation soapAction='urn:xmethods-delayed-quotes#getOutput'/>
+    <input>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </input>
+    <output>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </output>
+  </operation>
+  <operation name='getModel'>
+    <soap:operation soapAction='urn:xmethods-delayed-quotes#getModel'/>
+    <input>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </input>
+    <output>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </output>
+  </operation>
+  <operation name='terminate'>
+    <soap:operation soapAction='urn:xmethods-delayed-quotes#terminate'/>
+    <input>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </input>
+    <output>
+      <soap:body use='literal' namespace='urn:xmethods-delayed-quotes'/>
+    </output>
+  </operation>
+</binding>
+
+<service name='AutotuneService'>
+  <port name='AutotunePort' binding='AutotuneBinding'>
+    <soap:address location='http://racoon.ornl.gov/autotune/service/soapService.php'/>
+  </port>
+</service>
+</definitions>
