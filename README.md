@@ -1,7 +1,7 @@
 # Autotune
 Automatic calibration/optimization technology - applied to EnergyPlus building energy models for matching measured data.
 
-## Directories
+#### Directories
 * [demo](demo) - quickest way to see Autotune run (uses 15-minute data)
 * [installer](installer) - install scripts to setup Autotune web-service
 * [frontend](frontend) - webpage for defining residential or medium office building and starting Autotune
@@ -47,36 +47,10 @@ Requirements:
   * `pip install inspyred`
 * MySQL
 
-Install steps:
-
-* Install location assumes /var/www/html/autotune
-* Grep for all locations of racoon.ornl.gov and replace with your domain name
-* Get your Google maps API key and insert in frontend/selectingModelPage.php and frontend/iptolatlng.php
-* Setup mysql database, user, and password, and create tables with autotune.sql
-* Setup your mail server credentials in backend/autotune.py
-
 ## Linux Server
 Requirements:
 
-Linux (instructions below are for Ubuntu), PHP 5.x, MySQL, Python 2.7, Python suds, EnergyPlus 7.0 in default install location
-
-Install steps:
-
-* Install location assumes /var/www/html/autotune
-* Grep for all locations of racoon.ornl.gov and replace with your domain name
-* Get your Google maps API key and insert in frontend/selectingModelPage.php and frontend/iptolatlng.php
-* Setup mysql database, user, and password, and create tables with autotune.sql
-* Setup your mail server credentials in backend/autotune.py
-
-
-# Autotune
-Automatic calibration methodology
-
-## Requirements
-
-Ubuntu, PHP 5, PHP MySQL, Python 2.7, Python suds, Energyplus 7.0 in default install location
-
-## Install steps
+Ubuntu, PHP 5.x, MySQL, Python 2.7, Python suds, Energyplus 7.0 in default install location
 
 ### Get prerequisites
 
