@@ -2,10 +2,15 @@
 Automatic calibration technology - applied to EnergyPlus building energy models for matching measured data.
 
 [demo](demo) - quickest way to see Autotune run
+
 [installer](installer) - install scripts to setup Autotune web-service
+
 [frontend](frontend) - webpage for defining residential or medium office building and starting Autotune
+
 [backend](backend) - Autotune server that listens and processes new jobs
+
 [service](service) - web service for accepting new job requests
+
 [example](service\example) - web service client for calling the web service (with example data files)
 
 ## Background
