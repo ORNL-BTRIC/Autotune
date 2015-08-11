@@ -1,17 +1,13 @@
 # Autotune
-Automatic calibration technology - applied to EnergyPlus building energy models for matching measured data.
+Automatic calibration/optimization technology - applied to EnergyPlus building energy models for matching measured data.
 
-[demo](demo) - quickest way to see Autotune run
-
-[installer](installer) - install scripts to setup Autotune web-service
-
-[frontend](frontend) - webpage for defining residential or medium office building and starting Autotune
-
-[backend](backend) - Autotune server that listens and processes new jobs
-
-[service](service) - web service for accepting new job requests
-
-[example](service\example) - web service client for calling the web service (with example data files)
+## Directories
+* [demo](demo) - quickest way to see Autotune run (uses 15-minute data)
+* [installer](installer) - install scripts to setup Autotune web-service
+* [frontend](frontend) - webpage for defining residential or medium office building and starting Autotune
+* [backend](backend) - Autotune server that listens and processes new jobs
+* [service](service) - web service for accepting new job requests
+  * [example](service\example) - web service client for calling the web service (with example data files)
 
 ## Background
 Building energy models (EnergyPlus, energy audit tools, etc.) of existing buildings are unreliable unless calibrated so they correlate well with actual energy usage. Calibrating models is costly because it is currently an “art”, requiring significant manual effort by an experienced, skilled professional. Manual tuning is also imperfect, non-repeatable, and non-transferable.
@@ -26,13 +22,14 @@ The related research addresses: multi-objective optimization, web services for e
 
 * Windows operating system - desktops, laptops, netbooks
 * [EnergyPlus 7.0](http://apps1.eere.energy.gov/buildings/energyplus/energyPlus_download.cfm?previous Legacy EnergyPlus 7.0)
-* [Python 2.7](https://www.python.org/downloads/release/python-2710/ Python 2.7 Downloads]
+* [Python 2.7](https://www.python.org/downloads/release/python-2710/ Python 2.7 Downloads)
   * Note - When selecting options, enable "Add python.exe to Path" at the bottom of the list
 * Install inspyred
   * Open a command prompt (Start->cmd->enter)
-  * Type "pip install inspyred"
+  * `pip install inspyred`
 * Run Autotune
-  * Double-click AT_DEMO\Autotune.bat
+  * Double-click demo\autotune.bat
+  * This example will show results after each of 3 generations and completes in ~5 minutes.
 
 # Installation
 
@@ -44,9 +41,11 @@ Requirements:
 * [PHP 5.x](http://windows.php.net/download#php-5.6 "PHP Downloads")
   * [Apache PHP](https://www.youtube.com/watch?v=6Y6lOHov3Bk "Example PHP install video")
   * [IIS PHP] (https://www.youtube.com/watch?v=3Q27FJYmpwQ "Example PHP install video")
-* MySQL
-* Python 2.7
+* [Python 2.7](https://www.python.org/downloads/release/python-2710/ Python 2.7 Downloads)
 * Python suds
+  * Open a command prompt (Start->cmd->enter)
+  * `pip install inspyred`
+* MySQL
 
 Install steps:
 
@@ -59,7 +58,7 @@ Install steps:
 ## Linux Server
 Requirements:
 
-Linux (instructions below are for Ubuntu), [PHP 5.x](http://windows.php.net/download#php-5.6 "PHP Downloads"), MySQL, Python 2.7, Python suds, EnergyPlus 7.0 in default install location
+Linux (instructions below are for Ubuntu), PHP 5.x, MySQL, Python 2.7, Python suds, EnergyPlus 7.0 in default install location
 
 Install steps:
 
