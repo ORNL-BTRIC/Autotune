@@ -85,7 +85,7 @@ The autotune.log has to be writable
 `mysql -u root -p autotune < backend/autotune.sql`
 
 ## Example:
-To run the example in `/service/example`
+To run the example in `service/example`
 
 Run:
 
