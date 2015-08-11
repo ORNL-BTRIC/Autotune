@@ -59,7 +59,7 @@ $(document).ready(function() {
 		$( "#dialog-modal" ).dialog("open");
 		$("#stopDialog").show();
 		
-		var url = encodeURIComponent("http://inspired.jsu.edu/autotune/service/service.php?tracking="+value + "&terminate=1");
+		var url = encodeURIComponent("http://yourdomain.com/autotune/service/service.php?tracking="+value + "&terminate=1");
 		$("#ajax").load("proxy.php?url=" + url);
 		
 		$(".resumeOption").show();
@@ -75,7 +75,7 @@ $(document).ready(function() {
 		$( "#dialog-modal" ).dialog("open");
 		$("#resumeDialog").show();
 		
-		var url = encodeURIComponent("http://inspired.jsu.edu/autotune/service/service.php?tracking="+value+"&terminate=0");
+		var url = encodeURIComponent("http://yourdomain.com/autotune/service/service.php?tracking="+value+"&terminate=0");
 		$("#ajax").load("proxy.php?url=" + url);
 		$("#ajax").show();
 		
@@ -94,7 +94,7 @@ $(document).ready(function() {
 		$( "#dialog-modal" ).dialog("open");
 		$("#retuneDialog").show();
 		
-		var url = encodeURIComponent("http://inspired.jsu.edu/autotune/service/service.php?tracking="+value+"&retune=1");
+		var url = encodeURIComponent("http://yourdomain.com/autotune/service/service.php?tracking="+value+"&retune=1");
 	
 		console.log(url);
 		$.post("proxy.php?url=" + url, function(data) {

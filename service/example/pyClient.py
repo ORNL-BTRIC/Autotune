@@ -2,7 +2,7 @@ import suds
 import json
 
 
-url = 'http://inspired.jsu.edu/autotune/service/autotune.wsdl'
+url = 'http://yourdomain.com/autotune/service/autotune.wsdl'
 # Create the client
 client = suds.client.Client(url)
 print client
@@ -23,7 +23,7 @@ uDataContent = userDataFile.read()
 
 weatherFile = "USA_IL_Chicago-Midway.AP.725340_TMY"
 
-email = "agarrett@jsu.edu"
+email = "youremail"
 
 
 # Tune

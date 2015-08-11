@@ -291,7 +291,7 @@
 
 <service name='AutotuneService'>
   <port name='AutotunePort' binding='AutotuneBinding'>
-    <soap:address location='http://racoon.ornl.gov/autotune/service/soapService.php'/>
+    <soap:address location='http://yourdomain.com/autotune/service/soapService.php'/>
   </port>
 </service>
 </definitions>

@@ -51,7 +51,7 @@ $(document).ready(function() {
 		buttons: {
 			Ok: function() {
 				$(this).dialog("close");
-				window.location = "http://inspired.jsu.edu/autotune/home.html";
+				window.location = "http://yourdomain.com/autotune/home.html";
 			}
 		}
     });

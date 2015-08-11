@@ -15,14 +15,14 @@ echo $id;
 */
 	class AutotuneDb {
 		
-		private $user = "autotune";
-		private $pass = "password";
+		private $user = "autotune_user";
+		private $pass = "autotune_password";
 		private $con;
 		
 		function __construct() {
 		
 			try {
-				$this->con = new PDO('mysql:host=localhost;dbname=autotune', $this->user, $this->pass); // create a connection
+				$this->con = new PDO('mysql:host=autotune_host;dbname=autotune_db', $this->user, $this->pass); // create a connection
 			}
 			catch(PDOException $e) { 
 				print "Error - " . $e->getMessage();

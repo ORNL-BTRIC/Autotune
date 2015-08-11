@@ -27,7 +27,7 @@
 
 					echo "<h2>Tracking Number:<span id=\"modelNum\">$tracking</span></h2><br>";
 					
-					$url = "http://racoon.ornl.gov/autotune/service/service.php?tracking=".$tracking;
+					$url = "http://yourdomain.com/autotune/service/service.php?tracking=".$tracking;
 					$output = file_get_contents($url);
 					$xml = new SimpleXMLElement($output);
 									
@@ -35,7 +35,7 @@
 				?>
 
 				<div id="ajaxOutput"></div>
-				<form  action="http://racoon.ornl.gov/autotune/service/download.php" method="get">
+				<form  action="http://yourdomain.com/autotune/service/download.php" method="get">
 					<div class="left">
 					<?php if($modelsAvail):?>
 						<div class="box">

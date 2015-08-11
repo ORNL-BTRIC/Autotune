@@ -20,7 +20,7 @@
 					var parameters = $("input[name=parameters]").val();
 					var weather = $("input[name=weather]").val();
 					var email = $("input[name=email]").val()
-					$.post("http://racoon.ornl.gov/autotune/service/service.php",
+					$.post("http://yourdomain.com/autotune/service/service.php",
 						{
 						  userData:userData,
 						  baseModel:baseModel,
@@ -506,7 +506,7 @@
 //----------------------------------------------------------------------------------------------------------
 				?>
 				
-				<form id="create" action="http://racoon.ornl.gov/autotune/service/service.php" method="post">
+				<form id="create" action="http://yourdomain.com/autotune/service/service.php" method="post">
 					<input type="hidden" name="userData" value="<?php echo $userData; ?>" />
 					<input type="hidden" name="baseModel" value="<?php echo $baseModel; ?>" />
 					<input type="hidden" name="schedule" value="<?php echo $schedule; ?>" />

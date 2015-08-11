@@ -9,7 +9,7 @@
 			return $default;
 		}
 	}
-	$to = request('to', 'newjr@ornl.gov');
+	$to = request('to', 'youremail');
 	$from = request('from', 'Not_Given');
 	$subject = request('subject', 'No_Subject');
 	$message = request('body', 'No_Message');

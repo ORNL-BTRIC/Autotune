@@ -17,7 +17,7 @@
 		<script src="jquery/JQCode.js"></script>
 		
 		<script
-			src="http://maps.googleapis.com/maps/api/js?key=ENTER_YOUR_KEY_HERE">
+			src="http://maps.googleapis.com/maps/api/js?key=yourapikey">
 		</script>
 		
 		<!--<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />-->

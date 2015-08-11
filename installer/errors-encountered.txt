@@ -1,0 +1,50 @@
+
+s11@badger:/var/www/html/autotune/backend$ mysql -u root -p autotune < autotune.sql
+Enter password:
+s11@badger:/var/www/html/autotune/backend$ python autotune.py
+Traceback (most recent call last):
+  File "autotune.py", line 1481, in <module>
+    main()
+  File "autotune.py", line 1305, in main
+    cursor.execute('SELECT id, terminate, weather, email, runtime, baseModel, parameters, schedule, userData FROM Tracking WHERE queuePosition = 0')
+  File "/usr/lib/python2.7/dist-packages/MySQLdb/cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "/usr/lib/python2.7/dist-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+_mysql_exceptions.ProgrammingError: (1146, "Table 'autotune.Tracking' doesn't exist")
+s11@badger:/var/www/html/autotune/backend$ mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 51
+Server version: 5.5.44-0ubuntu0.14.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use autotune;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_autotune |
++--------------------+
+| model              |
+| tracking           |
+| trackingmodel      |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+[Thu Aug 06 15:09:54.277236 2015] [:error] [pid 4910] [client 160.91.46.104:60355] PHP Notice:  Use of undefined constant UTF - assumed 'UTF' in /var/www/html/autotune/service/service.php on line 43
+$array[$key] = htmlentities($value, 'UTF-8');

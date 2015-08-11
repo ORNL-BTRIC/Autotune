@@ -354,7 +354,7 @@ $(document).ready(function() {
 				map.setZoom(6);
 				map.setCenter(new google.maps.LatLng(coords[0], coords[1]));
 			}
-			$.getJSON('/autotune/map_locations.js', 
+			$.getJSON('/autotune/frontend/js/map_locations.js', 
 				function(data) {
 					var obj = data.weatherstations;
 					for(var i=0; i<obj.length; i++) {

@@ -33,15 +33,15 @@ import time
 import zipfile
 
 # Database login information
-DBHOST = '127.0.0.1'
-DBUSER = 'autotune'
-DBPASS = 'password'
-DBNAME = 'autotune'
+DBHOST = 'autotune_host'
+DBUSER = 'autotune_user'
+DBPASS = 'autotune_password'
+DBNAME = 'autotune_db'
 ERROR_DIRECTORY = os.getcwd()
 SENDMAIL_SERVER = 'localhost'
 SENDMAIL_USER = None
 SENDMAIL_PASS = None
-WEBSITE_URL = 'http://racoon.ornl.gov/autotune'
+WEBSITE_URL = 'http://yourdomain.com/autotune'
 DOWNLOAD_URL = '{}/service/download.php'.format(WEBSITE_URL)
 
 # Logging for the daemon and evolutionary processes.
@@ -1240,8 +1240,8 @@ def load_eplus_user_data(filename):
 
 
 def upload_experiment(title, description, machine, stats_file, inds_file, proxy=None):
-    url = 'http://autotune.roofcalc.com/main/?q=content/autotune-experiment-upload-status'
-    data = {'key': '56df4ty791fgh7-yhf13489-umzp[1m89smx81]',
+    url = 'http://yourdomain.com/main/?q=content/autotune-experiment-upload-status'
+    data = {'key': 'enter a key here',
             'expmt_title': title,
             'expmt_desc': description,
             'machine_name': machine}
@@ -1408,19 +1408,19 @@ def main():
                                                  'cleanup': True,
                                                  'error_function': error_function,
                                                  'tracking_id': tracking_id,
-                                                 'user_data': user_data})
+                                                 'user_data': user_data} )
                     
                     sfile.close()
                     ifile.close()
                     
                     # Upload the results to the Autotune server.
                     submitter_name = email if email is not None else 'anonymous'
-                    upload_success = upload_experiment('Autotune Server {}'.format(tracking_id), 
-                                                       'Tracking ID {} submitted by {}'.format(tracking_id, submitter_name), 
-                                                       'Autotune Server', 
-                                                       os.path.join(output_dir, 'stat{:09}.csv'.format(tracking_id)), 
-                                                       os.path.join(output_dir, 'inds{:09}.csv'.format(tracking_id)))
-                    
+                    #upload_success = upload_experiment('Autotune Server {}'.format(tracking_id), 
+                    #                                   'Tracking ID {} submitted by {}'.format(tracking_id, submitter_name), 
+                    #                                   'Autotune Server', 
+                    #                                   os.path.join(output_dir, 'stat{:09}.csv'.format(tracking_id)), 
+                    #                                   os.path.join(output_dir, 'inds{:09}.csv'.format(tracking_id)))
+                    #
                     # Send an email to the user to let them know that the job is finished.
                     # Call the sendmail function here.
                     if email is not None and '@' in email:
@@ -1429,17 +1429,17 @@ def main():
                             mail_server.starttls()
                             mail_server.login(SENDMAIL_USER, SENDMAIL_PASS)
                         else:
-                            mail_server = smtplib.SMTP('smtp.ornl.gov')
+                            mail_server = smtplib.SMTP('smtpserver')
 
-                        mail_from = 'newjr@ornl.gov'
+                        mail_from = 'youremail'
                         mail_to = email
                         msg_body = '\n'.join(['Your Autotune job (tracking# {}) has completed.'.format(tracking_id),
                                              'You can view the tuned models by visiting the Autotune website and using the tracking number.',
                                              'You can also download all tuned models as a single zip file at {}?tracking={}'.format(DOWNLOAD_URL, tracking_id)])
-                        if upload_success:
-                            msg_body += '\n'.join(['\n\nThe results of the tuning have been submitted to the Autotune web dashboard.',
-                                                   'http://autotune.roofcalc.com/main/?q=content/autotune-dashboard',
-                                                   'The title for your tuning is "Autotune Server {}".'.format(tracking_id)])
+                        #if upload_success:
+                        #    msg_body += '\n'.join(['\n\nThe results of the tuning have been submitted to the Autotune web dashboard.',
+                        #                           'http://yourdomain.com/main/?q=content/autotune-dashboard',
+                        #                           'The title for your tuning is "Autotune Server {}".'.format(tracking_id)])
                         
                         msg = MIMEText(msg_body)
                         msg['Subject'] = 'Autotune results ready (Tracking ID {})'.format(tracking_id)

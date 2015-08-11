@@ -3,7 +3,7 @@
 	$tracking = $_GET["tracking"];
 	
 	// get queue position
-	$url = "http://racoon.ornl.gov/autotune/service/service.php?tracking=" . $tracking;
+	$url = "http://yourdomain.com/autotune/service/service.php?tracking=" . $tracking;
 	$output = file_get_contents($url); //get xml string
 	$xml = new SimpleXMLElement($output);
 	

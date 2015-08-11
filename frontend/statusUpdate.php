@@ -1,7 +1,7 @@
 <?php
 	
 	$tracking = $_GET['trackingId'];
-	$url = "http://racoon.ornl.gov/autotune/service/service.php?tracking=".$tracking;
+	$url = "http://yourdomain.com/autotune/service/service.php?tracking=".$tracking;
 	$output = file_get_contents($url);
 	$xml = new SimpleXMLElement($output);
 	
