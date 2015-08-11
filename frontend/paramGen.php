@@ -18,7 +18,7 @@
 		$contents = modify($defaultContents, $additionalOptions); 
 		$contents = str_replace('"', "'", $contents); // replace double quotes with single quotes
 		
-		$generator = "/yourserverpath/autotune/web/backend/idfgenerator.py"; //on the server
+		$generator = "python yourserverpath/autotune/backend/idfgenerator.py"; //on the server
 		//$generator = "C:/xampp/htdocs/Git/backend/idfgenerator.py"; //testing locally
 		
 		$command = "$generator \"$contents\"";
