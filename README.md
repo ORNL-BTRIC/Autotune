@@ -29,7 +29,23 @@ The related research addresses: multi-objective optimization, web services for e
 * Run Autotune
   * Double-click demo\autotune.bat
   * This example will show results after each of 3 generations and completes in ~5 minutes.
-
+  
+# Quick test using Vagrant
+A fully functioning Ubuntu Linux Virtual Machine has been created with all dependencies to provide a quick demonstration of Autotune. Just VirtualBox and Vagrant are required to download and launch this image.
+* Install VirtualBox and Vagrant (on any platform)
+* On a command line terminal, in a new directory of your choice, run
+  * `vagrant init sanyalj/ornl-autotune`<br>  
+  This will create a Vagrantfile. Edit the Vagrant file to add the following snippet within the `Vagrant.configure(2) do |config|` ... `end` section:
+    ```
+    # Config username
+    config.ssh.username = "autotune"
+  
+    # start GUI
+    config.vm.provider "virtualbox" do |v|
+	  v.gui = true
+    end
+    ```
+  
 # Server Installations
 These instructions are used to setup a machine so that Autotune can be invoked through the provided website and/or web service.
 
