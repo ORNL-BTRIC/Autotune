@@ -21,7 +21,7 @@ The related research addresses: multi-objective optimization, web services for e
 # Quick Demonstrations
 
 ## Lean Windows Demo
-This illustrates the basic Autotune calibration functionality in the quickest way possible and with a minimum amount of user effort.
+This illustrates the basic Autotune calibration functionality in the quickest way possible and with a minimum amount of user effort. This demonstrates calibration of 303 parameters running only 16 EnergyPlus simulations, so a user shouldn't expect much of an improvement in error for this short demo.
 
 * Windows operating system - desktops, laptops, netbooks
 * [EnergyPlus 7.0](http://apps1.eere.energy.gov/buildings/energyplus/energyPlus_download.cfm?previous Legacy EnergyPlus 7.0)
