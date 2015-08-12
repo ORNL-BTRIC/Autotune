@@ -21,6 +21,8 @@ The related research addresses: multi-objective optimization, web services for e
 # Quick Demonstrations
 
 ## Lean Windows Demo
+This illustrates the basic Autotune calibration functionality in the quickest way possible and with a minimum amount of user effort.
+
 * Windows operating system - desktops, laptops, netbooks
 * [EnergyPlus 7.0](http://apps1.eere.energy.gov/buildings/energyplus/energyPlus_download.cfm?previous Legacy EnergyPlus 7.0)
 * [Python 2.7](https://www.python.org/downloads/release/python-2710/ Python 2.7 Downloads)
@@ -32,7 +34,9 @@ The related research addresses: multi-objective optimization, web services for e
   * Double-click demo\autotune.bat
   * This example will show results after each of 3 generations and completes in ~5 minutes.
   
-## Larger demo with a virtual machine
+## Larger demo on a virtual machine
+This larger demo illustrates the full functionality of having Autotune running on a server as a web-service. A virtual machine of the setup is provided for getting up and running fairly quickly.
+
 A fully functioning Ubuntu Linux Virtual Machine has been created with all dependencies to provide a quick demonstration of Autotune. Just VirtualBox and Vagrant are required to download and launch this image.
 * Install VirtualBox and Vagrant
 * On a command line terminal, in a new directory of your choice, run
