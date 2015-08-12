@@ -45,8 +45,8 @@ A fully functioning Ubuntu Linux Virtual Machine has been created with all depen
 	  v.gui = true
     end
     ```
-  * `vagrant up --provider virtualbox` 
-  This will download the VM from Atlas (the new version of VagrantCloud) and then power up the instance. 
+  * `vagrant up --provider virtualbox` <br>
+  This will download the VM from Atlas (the new version of VagrantCloud) and then power up the instance with an Ubuntu GUI.
   
   
 # Server Installations
