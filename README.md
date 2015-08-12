@@ -18,7 +18,9 @@ Deploy a generalized, automated building energy model tuning methodology that en
 ## Scope
 The related research addresses: multi-objective optimization, web services for easy integration with existing business processes, field-deployable systems, sensitivity analysis, quality assurance and control for missing or corrupt data, big data mining, a suite of machine learning algorithms to generate calibration functions, optimal calibration algorithm selection using high performance computing resources, quantified assessments of trade-offs between tuning accuracy and amount of data available, calibration using monthly data (12 points/year), demonstrations using research houses with 15-minute sensor channels (700,000 data points per year), and implementation of a testing methodology for quantifying accuracy of the final calibrated model to the real building. For more information on the research behind Autotune, please see http://bit.ly/autotune_papers.
 
-# Windows Demonstration
+# Quick Demonstrations
+
+## Lean Windows Demo
 * Windows operating system - desktops, laptops, netbooks
 * [EnergyPlus 7.0](http://apps1.eere.energy.gov/buildings/energyplus/energyPlus_download.cfm?previous Legacy EnergyPlus 7.0)
 * [Python 2.7](https://www.python.org/downloads/release/python-2710/ Python 2.7 Downloads)
@@ -30,7 +32,7 @@ The related research addresses: multi-objective optimization, web services for e
   * Double-click demo\autotune.bat
   * This example will show results after each of 3 generations and completes in ~5 minutes.
   
-# Quick test using Vagrant
+## Larger demo with a virtual machine
 A fully functioning Ubuntu Linux Virtual Machine has been created with all dependencies to provide a quick demonstration of Autotune. Just VirtualBox and Vagrant are required to download and launch this image.
 * Install VirtualBox and Vagrant
 * On a command line terminal, in a new directory of your choice, run
@@ -47,6 +49,7 @@ A fully functioning Ubuntu Linux Virtual Machine has been created with all depen
     ```
   * `vagrant up --provider virtualbox` <br>
   This will download the VM from Atlas (the new version of VagrantCloud) and then power up the instance with an Ubuntu GUI.
+* TODO: Add steps to use the VM for demo
   
   
 # Server Installations
