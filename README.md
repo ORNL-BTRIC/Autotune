@@ -32,7 +32,7 @@ The related research addresses: multi-objective optimization, web services for e
   
 # Quick test using Vagrant
 A fully functioning Ubuntu Linux Virtual Machine has been created with all dependencies to provide a quick demonstration of Autotune. Just VirtualBox and Vagrant are required to download and launch this image.
-* Install VirtualBox and Vagrant (on any platform)
+* Install VirtualBox and Vagrant
 * On a command line terminal, in a new directory of your choice, run
   * `vagrant init sanyalj/ornl-autotune`<br>  
   This will create a Vagrantfile. Edit the Vagrant file to add the following snippet within the `Vagrant.configure(2) do |config|` ... `end` section:
@@ -45,6 +45,9 @@ A fully functioning Ubuntu Linux Virtual Machine has been created with all depen
 	  v.gui = true
     end
     ```
+  * `vagrant up --provider virtualbox` 
+  This will download the VM from Atlas (the new version of VagrantCloud) and then power up the instance. 
+  
   
 # Server Installations
 These instructions are used to setup a machine so that Autotune can be invoked through the provided website and/or web service.
