@@ -31,6 +31,7 @@ The related research addresses: multi-objective optimization, web services for e
   * This example will show results after each of 3 generations and completes in ~5 minutes.
 
 # Server Installations
+These instructions are used to setup a machine so that Autotune can be invoked through the provided website and/or web service.
 
 ## Windows Server
 Requirements:
@@ -80,19 +81,17 @@ Linux (Ubuntu example here), PHP 5.x, MySQL, Python 2.7, Python suds, Energyplus
 4. `post_max_size = 64M`
 5. `upload_max_filesize = 64M`
 
-
 ### Setup the installation
 1. Clone/export the git repo
 2. Modify the `installer/install-settings.ini` to supply appropriate values 
 3. Run `sudo python install.py`
 
 ### Permission changes
-In the location of the autotune on the web-server:
-1. `sudo chmod 777 backend`
-2. `sudo chmod 777 frontend`
-3. `sudo chmod 777 service`
-4. The autotune.log has to be writable
-  * `sudo chmod 777 backend/autotune.log`
+1. In the location of the autotune on the web-server:
+2. `sudo chmod 777 backend`
+3. `sudo chmod 777 frontend`
+4. `sudo chmod 777 service`
+5. `sudo chmod 777 backend/autotune.log`
 
 ### Create MySQL database
 1. `mysql -u root -p`
