@@ -38,10 +38,10 @@ This illustrates the basic Autotune calibration functionality in the quickest wa
 This larger demo illustrates the full functionality of having Autotune running on a server as a web-service. A virtual machine of the setup is provided for getting up and running fairly quickly.
 
 A fully functioning Ubuntu Linux Virtual Machine has been created with all dependencies to provide a quick demonstration of Autotune. Just VirtualBox and Vagrant are required to download and launch this image.
-* Install VirtualBox and Vagrant
+* Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html)
 * On a command line terminal, in a new directory of your choice, run
-  * `vagrant init sanyalj/ornl-autotune`<br>  
-  This will create a Vagrantfile. Edit the Vagrant file to add the following snippet within the `Vagrant.configure(2) do |config|` ... `end` section:
+  * `vagrant init sanyalj/ornl-autotune`<br>
+  This will create a Vagrantfile. Edit the Vagrantfile to add the following snippet within the `Vagrant.configure(2) do |config|` ... `end` section:
     ```
     # Config username
     config.ssh.username = "autotune"
