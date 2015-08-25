@@ -793,7 +793,7 @@
 					var eNov = $("*[name='energyUsage[10]']");
 					var eDec = $("*[name='energyUsage[11]']");
 					
-					var gJan = $("*[name='gasUsage[0]']");
+					/*var gJan = $("*[name='gasUsage[0]']");
 					var gFeb = $("*[name='gasUsage[1]']");
 					var gMar = $("*[name='gasUsage[2]']");
 					var gApr = $("*[name='gasUsage[3]']");
@@ -804,26 +804,28 @@
 					var gSep = $("*[name='gasUsage[8]']");
 					var gOct = $("*[name='gasUsage[9]']");
 					var gNov = $("*[name='gasUsage[10]']");
-					var gDec = $("*[name='gasUsage[11]']");
+					var gDec = $("*[name='gasUsage[11]']");*/
 					
 					var eInput = new Array(eJan, eFeb, eMar, eApr, eMay, eJun, eJul, eAug, eSep, eOct, eNov, eDec);
-					var gInput = new Array(gJan, gFeb, gMar, gApr, gMay, gJun, gJul, gAug, gSep, gOct, gNov, gDec);
+					/*var gInput = new Array(gJan, gFeb, gMar, gApr, gMay, gJun, gJul, gAug, gSep, gOct, gNov, gDec);*/
 					
 					var eFile = jWizard.energyFile.value;
-					var gFile = jWizard.gasFile.value;
-					var tFile = jWizard.tempFile.value;
+					//var gFile = jWizard.gasFile.value;
+					//var tFile = jWizard.tempFile.value;
 					
 					var eBlanks = checkForBlanks(eInput);
-					var gBlanks = checkForBlanks(gInput);
+					/*var gBlanks = checkForBlanks(gInput); */
 					
 					
 					if(eFile == "" && eBlanks == true) {
 						$("#electricity").before('<div class="important reminder">*Please select a file for upload or completely fill out the monthly usage table.</div>');
 						$("#electricity").before('<span class="important reminder">*   </span>');
 						validateMonthlyInput(eInput);
-						if(gFile == "" && gBlanks == true) {
-							$("#gas").before('<div class="important reminder">*Please select a file for upload or completely fill out the monthly usage table.</div>');
-							$("#gas").before('<span class="important reminder">*   </span>');
+						self.nextStep();
+						count++; 
+						/*if(gFile == "" && gBlanks == true) {
+							//$("#gas").before('<div class="important reminder">*Please select a file for upload or completely fill out the monthly usage table.</div>');
+							//$("#gas").before('<span class="important reminder">*   </span>');
 							validateMonthlyInput(gInput);
 							if(tFile == "") { 
 								$("#temp").before('<div class="important reminder">*Please select a file for upload.</div>');
@@ -838,11 +840,11 @@
 								self.nextStep();
 								count++;
 							}
-						}
+						}*/
 						//else if(gFile != "" && gBlanks == false) {
 							//code for forcing user to upload a file OR fill in the table
 						//}
-						else if(gFile != "" && !(gFile.indexOf(".csv") > 0)) {
+						/*else if(gFile != "" && !(gFile.indexOf(".csv") > 0)) {
 							$("#gas").before('<div class="important reminder">*Please upload a .csv file.</div>');
 							$("#gas").before('<span class="important reminder">*   </span>');
 							if(tFile == "") { 
@@ -885,8 +887,8 @@
 									$("#temp").before('<span class="important reminder">*   </span>');
 								}
 							}
-						}
-						else if(gFile != "" && (gFile.indexOf(".csv") > 0)) {
+						}*/
+						/*else if(gFile != "" && (gFile.indexOf(".csv") > 0)) {
 							if(tFile == "") { 
 								$(".reminder").remove();
 								self.nextStep();
@@ -901,13 +903,13 @@
 								self.nextStep();
 								count++;
 							}
-						}
+						}*/
 					}
 					//else if(eFile != "" && eBlanks == false) {  code to handle forcing the user to upload a file OR fill in the table}
 					else if(eFile != "" && !(eFile.indexOf(".csv") > 0)) {
 						$("#electricity").before('<div class="important reminder">*Please upload a .csv file.</div>');
 						$("#electricity").before('<span class="important reminder">*   </span>');
-						if(gFile == "" && gBlanks == true) {
+						/*if(gFile == "" && gBlanks == true) {
 							$("#gas").before('<div class="important reminder">*Please select a file for upload or completely fill out the monthly usage table.</div>');
 							$("#gas").before('<span class="important reminder">*   </span>');
 							validateMonthlyInput(gInput);
@@ -919,11 +921,11 @@
 								$("#temp").before('<div class="important reminder">*Please upload a .csv file.</div>');
 								$("#temp").before('<span class="important reminder">*   </span>');
 							}
-						}
+						}*/
 						//else if(gFile != "" && gBlanks == false) {
 							//code for forcing user to upload a file OR fill in the table
 						//}
-						else if(gFile != "" && !(gFile.indexOf(".csv") > 0)) {
+						/*else if(gFile != "" && !(gFile.indexOf(".csv") > 0)) {
 							$("#gas").before('<div class="important reminder">*Please upload a .csv file.</div>');
 							$("#gas").before('<span class="important reminder">*   </span>');
 							if(tFile == "") { 
@@ -975,7 +977,7 @@
 								$("#temp").before('<div class="important reminder">*Please upload a .csv file.</div>');
 								$("#temp").before('<span class="important reminder">*   </span>');
 							}
-						}
+						}*/
 					}
 					else if(eBlanks == false) {
 						var errorcountElectricity = validateMonthlyInput(eInput);
@@ -984,8 +986,9 @@
 							$("#electricity").before('<div class="important reminder">*Please select a file for upload or completely fill out the monthly usage table with the appropriate information.</div>');
 							$("#electricity").before('<span class="important reminder">*   </span>');
 						}
-						
-						if(gFile == "" && gBlanks == true) {
+						self.nextStep();
+						count++;
+						/*if(gFile == "" && gBlanks == true) {
 							errorcountGas = validateMonthlyInput(gInput);
 							if(errorcountGas == 0 && errorcountElectricity == 0) {
 								if(tFile == "") { 
@@ -1078,10 +1081,12 @@
 								self.nextStep();
 								count++;
 							}
-						}
+						}*/
 					}
 					else if(eFile != "" && (eFile.indexOf(".csv") > 0)) {
-						if(gFile == "" && gBlanks == true) {
+						self.nextStep();
+						count++;
+						/*if(gFile == "" && gBlanks == true) {
 							errorcount = validateMonthlyInput(gInput);
 							if(errorcount == 12) {
 								if(tFile == "") { 
@@ -1111,11 +1116,11 @@
 									$("#temp").before('<span class="important reminder">*   </span>');
 								}
 							}
-						}
+						}*/
 						//else if(gFile != "" && gBlanks == false) {
 							//code for forcing user to upload a file OR fill in the table
 						//}
-						else if(gFile != "" && !(gFile.indexOf(".csv") > 0)) {
+						/*else if(gFile != "" && !(gFile.indexOf(".csv") > 0)) {
 							$("#gas").before('<div class="important reminder">*Please upload a .csv file.</div>');
 							$("#gas").before('<span class="important reminder">*   </span>');
 							if(tFile == "") { 
@@ -1173,7 +1178,7 @@
 								self.nextStep();
 								count++;
 							}
-						}
+						}*/
 					}
 				}
 			});
@@ -1343,3 +1348,4 @@
 		}
 	});
 }(jQuery));
+

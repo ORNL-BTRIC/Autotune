@@ -9084,103 +9084,108 @@ OutputControl:ReportingTolerances,
 
 Output:Variable,
     *,                       !- Key Value
+    Total Building Electric Demand,        !- Variable Name
+    TimeStep;                  !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
     Outdoor Dry Bulb,        !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Outdoor Humidity Ratio,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Outdoor Relative Humidity,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Boiler Gas Consumption,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Boiler Water Inlet Temp, !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Boiler Water Outlet Temp,!- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Boiler Part-Load Ratio,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Plant Loop System Cycle On/Off Status,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Plant Loop Heating Demand,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Plant Loop InletNode Flowrate,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Plant Loop InletNode Temperature,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Plant Loop OutletNode Temperature,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Plant Loop Unmet Demand, !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Air Loop Heating Coil Hot Water Consumption,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     AirLoopHVAC Actual Outdoor Air Fraction,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Air Loop System Cycle On/Off Status,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     AirLoopHVAC Outdoor Air Economizer Status,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Air Loop Total Heating Energy,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Air Loop Total Cooling Energy,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 Output:Variable,
     *,                       !- Key Value
     Air Loop Fan Electric Consumption,  !- Variable Name
-    HOURLY;                  !- Reporting Frequency
+    TimeStep;                  !- Reporting Frequency
 
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:METER ===========

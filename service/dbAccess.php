@@ -52,10 +52,11 @@ echo $id;
 		
 		function duplicate($tracking) { //dublicates an order by using the same information, but with a new tracking number and queue position. Returns new Tracking number
 			
-			$insert = $this->con->prepare("INSERT INTO  `Tracking` (`queuePosition`, `baseModel`, `schedule`, `userData` ) 
-									SELECT `queuePosition`, `baseModel`, `schedule`, `userData`
+			$insert = $this->con->prepare("INSERT INTO `Tracking` (`queuePosition`, `baseModel`, `schedule`, `userData`, `parameters`, `weather`, `email` ) 
+									SELECT `queuePosition`, `baseModel`, `schedule`, `userData`, `parameters`, `weather`, `email`
 									FROM `Tracking`
 									WHERE `id` = $tracking");
+
 			if(!$insert->execute()) {
 				echo $insert->errorInfo()[2]; // print any errors
 			}

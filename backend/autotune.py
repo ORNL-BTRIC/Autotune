@@ -1033,7 +1033,7 @@ def autotune_evaluator(candidate, args):
         # If there was a problem with the simulation, save it to a file.
         if not success:
             ezname = os.path.join(ERROR_DIRECTORY, '{}.error.zip'.format(os.path.basename(os.path.normpath(output_directory))))
-            zipit(output_directory, ezname)
+            #zipit(output_directory, ezname)
             logger.error('autotune_evaluator() :: Tracking ID {} :: EnergyPlus failed to execute. Full information can be found in {}.'.format(tracking_id, ezname))
             fitness = WORST_FITNESS
         else:

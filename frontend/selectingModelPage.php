@@ -685,7 +685,7 @@
 								<div id="energyInputs"></div>
 						  </div>
 						  
-						  <h3>Gas</h3>
+						  <!-- <h3>Gas</h3>
 						  <div>
 								<label id="gas">Have a file: </label>
 								<input type="file" name="gasFile"><br>
@@ -698,7 +698,7 @@
 						  <div>
 								<label id="temp">Have a file containing home temperature readings: </label>
 								<input type="file" name="tempFile"><br>
-						  </div>
+						  </div> -->
 						 
 					</div>
 					</fieldset>
