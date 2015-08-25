@@ -89,6 +89,7 @@ Linux (Ubuntu example here), PHP 5.x, MySQL, Python 2.7, Python suds, Energyplus
 
 ### Weather Files
 1. Extract additional weather files to WeatherData directory of EnergyPlus
+2. Download [WeatherData.tar.gz](http://elessar.ornl.gov/autotune_data/WeatherData.tar.gz "Weather Data")
 2. `tar zxvf WeatherData.tar.gz`
 3. `sudo mv WeatherData/* /usr/local/EnergyPlus-7-0-0/WeatherData/`
 
