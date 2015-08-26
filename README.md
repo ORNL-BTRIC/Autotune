@@ -57,9 +57,12 @@ A fully functioning Ubuntu Linux Virtual Machine has been created with all depen
     * If loading the image in the window is not responsive, open VirtualBox, right-click the "Autotune_default" image, select settings, and set memory and processor in the green area to optimize for your system's capabilities.
 
 ### Running on the Virtual Machine
-1. Double-click `Autotune_standalone_demo.sh` - this runs the python script using example files
-2. Double-click `Autotune_webservice_client.sh` - the Autotune web service is loaded at startup, this will run a webservice client that uses the Autotune web service using example files
-3. Double-click `Autotune_webpage.html` - this allows a user to interact with a web interface to define a building, location, measured data, and submit the calibration to the Autotune web service.
+1. Standalone
+   * Double-click `Autotune_standalone_demo.sh` - this runs the python script using example files
+2. Web Service Client
+   * Double-click `Autotune_webservice_client.sh` - the Autotune web service is loaded at startup, this will run a webservice client that uses the Autotune web service using example files
+3. Website
+   * Double-click `Autotune_webpage.html` - this allows a user to interact with a web interface to define a building, location, measured data, and submit the calibration to the Autotune web service.
 Note: The result link emailed to you, when using option #2 or #3, will have to be copy/pasted into the VirtualBox's browser to properly show the resulting files.
   
 # Server Installations
