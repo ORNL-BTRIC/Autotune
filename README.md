@@ -39,9 +39,11 @@ This larger demo illustrates the full functionality of having Autotune running o
 
 A fully functioning Ubuntu Linux Virtual Machine has been created with all dependencies to provide a quick demonstration of Autotune. Just VirtualBox and Vagrant are required to download and launch this image.
 * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](http://www.vagrantup.com/downloads.html)
-* On a command line terminal, in a new directory of your choice, run
-  * `vagrant init sanyalj/ornl-autotune`<br>
-  This will create a Vagrantfile. Edit the Vagrantfile to add the following snippet within the `Vagrant.configure(2) do |config|` ... `end` section:
+  * Enable Virtualization Technology (VT-x) in BIOS
+  * All passwords for this system (including screen timeout) are `autotune`
+* Configure Vagrant
+  * On a command line terminal, in a new directory of your choice, run `vagrant init sanyalj/ornl-autotune` - this will create a Vagrantfile.
+  * Edit the Vagrantfile to add the following snippet within the `Vagrant.configure(2) do |config|` ... `end` section:
     ```
     # Config username
     config.ssh.username = "autotune"
@@ -51,10 +53,14 @@ A fully functioning Ubuntu Linux Virtual Machine has been created with all depen
 	  v.gui = true
     end
     ```
-  * `vagrant up --provider virtualbox` <br>
-  This will download the VM from Atlas (the new version of VagrantCloud) and then power up the instance with an Ubuntu GUI.
-* TODO: Add steps to use the VM for demo
-  
+  * `vagrant up --provider virtualbox` - this will download the VM from Atlas (the new version of VagrantCloud) and then power up the instance with a Linux (Ubuntu) GUI.
+    * If loading the image in the window is not responsive, open VirtualBox, right-click the "Autotune_default" image, select settings, and set memory and processor in the green area to optimize for your system's capabilities.
+
+### Running on the Virtual Machine
+1. Double-click `Autotune_standalone_demo.sh` - this runs the python script using example files
+2. Double-click `Autotune_webservice_client.sh` - the Autotune web service is loaded at startup, this will run a webservice client that uses the Autotune web service using example files
+3. Double-click `Autotune_webpage.html` - this allows a user to interact with a web interface to define a building, location, measured data, and submit the calibration to the Autotune web service.
+Note: The result link emailed to you, when using option #2 or #3, will have to be copy/pasted into the VirtualBox's browser to properly show the resulting files.
   
 # Server Installations
 These instructions are used to setup a machine so that Autotune can be invoked through the provided website and/or web service.
