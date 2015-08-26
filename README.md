@@ -78,6 +78,7 @@ Requirements:
   * [IIS PHP] (https://www.youtube.com/watch?v=3Q27FJYmpwQ "Example PHP install video")
 * [Python 2.7](https://www.python.org/downloads/release/python-2710/ Python 2.7 Downloads)
 * Python suds
+* Inspyred
   * Open a command prompt (Start->cmd->enter)
   * `pip install inspyred`
 * MySQL
