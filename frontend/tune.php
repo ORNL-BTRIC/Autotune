@@ -410,7 +410,7 @@
 				function addEnergyUsage($energyUsageArray, &$dataArray) {
 					
 					$next = getNext($dataArray, 0);
-					$dataArray[0][$next] = "Whole Building:Total Building Electric Demand [J](TimeStep)";
+					$dataArray[0][$next] = "Whole Building:Total Building Electric Demand [W](TimeStep)";
 					
 					for($i=1; $i<=count($energyUsageArray); $i++) {
 						// $energy = kwhToJoules($energyUsageArray[$i-1]);
