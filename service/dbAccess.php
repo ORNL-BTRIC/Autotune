@@ -45,7 +45,6 @@ echo $id;
 			$input['baseModel'] = $modelFile;
 			$input['userData'] = $userFile;
 			$this->insertInputFile($id, $input);
-		
 			
 			return $id;
 		}
@@ -56,7 +55,6 @@ echo $id;
 									SELECT `queuePosition`, `baseModel`, `schedule`, `userData`, `parameters`, `weather`, `email`
 									FROM `Tracking`
 									WHERE `id` = $tracking");
-
 			if(!$insert->execute()) {
 				echo $insert->errorInfo()[2]; // print any errors
 			}
@@ -64,8 +62,6 @@ echo $id;
 			$this->updateQueuePosition($id);
 			
 			return $id;
-			
-			
 		}
 		
 		function nextQueuePosition() { // returns the next queue position in the orders
@@ -99,7 +95,6 @@ echo $id;
 			$set['weather'] = $str;
 			$where['id'] = $tracking;
 			return $this->update("Tracking", $set, $where);
-		
 		}
 		
 		function getWeather($tracking) {
@@ -110,7 +105,6 @@ echo $id;
 			$set['email'] = $str;
 			$where['id'] = $tracking;
 			return $this->update("Tracking", $set, $where);
-		
 		}
 		
 		function getEmail($tracking) {
@@ -176,13 +170,11 @@ echo $id;
 			}
 			
 			return $array;
-			
 		}
 		
 		function modelsAvail($trackNum) { //returns a boolean
 			$array = $this->getModelIds($trackNum);
 			return !empty($array);
-		
 		}
 	
 		function insertInputFile($id, $inputFile) { // parameter - associative array with (db field name) => (File string)
@@ -202,7 +194,6 @@ echo $id;
 			
 			$where['id'] = $id;
 			return $this->update("Tracking", $zippedFiles, $where);
-			
 		}	
 		
 		function insertFile($id, $file, $fit) { // inserts a file and fitness into Model, returns the id
@@ -268,11 +259,8 @@ echo $id;
 			// What to call the downloaded file
 			header("Content-Disposition: attachment; filename=" . basename("$filename"));
 			//header('Content-Length: '.filesize($filename));
-		
 			
 			readfile($filename);
-			
-			
 		}
 		
 		function get($id, $table, $attr) { //only returns one item, do not use if query will return multiple items -> use getArray
@@ -296,7 +284,6 @@ echo $id;
 			}
 			
 			return $array;
-		
 		}
 		
 		function update($table, $set, $where) { //set and where are associative arrays where key=>value in array is key = value in query
