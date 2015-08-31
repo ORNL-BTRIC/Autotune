@@ -64,7 +64,7 @@ A fully functioning Ubuntu Linux Virtual Machine has been created with all depen
 3. Website
    * Double-click `Autotune_webpage.html` - this allows a user to interact with a web interface to define a building, location, measured data, and submit the calibration to the Autotune web service.
 
-Note: The result link emailed to you, when using option #2 or #3, will have to be copy/pasted into the VirtualBox's browser to properly show the resulting files.
+Note: Options #2 and #3 will provide you a tracking number. Please use this tracking number in the VirtualBox's browser (which will open to the Autotune homepage) to check the job status and if complete, download the resulting calibrated input files.
   
 # Server Installations
 These instructions are used to setup a machine so that Autotune can be invoked through the provided website and/or web service.
