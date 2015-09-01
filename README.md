@@ -55,6 +55,8 @@ A fully functioning Ubuntu Linux Virtual Machine has been created with all depen
     ```
   * `vagrant up --provider virtualbox` - this will download the VM from Atlas (the new version of VagrantCloud) and then power up the instance with a Linux (Ubuntu) GUI.
     * If loading the image in the window is not responsive, open VirtualBox, right-click the "Autotune_default" image, select settings, and set memory and processor in the green area to optimize for your system's capabilities.
+   
+We have observed, on one occassion, that the VM created in VirtualBox after the vagrant progess was marked as a 32-bit version of Ubuntu. This resulted in a blank GUI when running `vagrant up`. Changing it to 64-bit resolved the problem. 
 
 ### Running on the Virtual Machine
 1. Standalone
